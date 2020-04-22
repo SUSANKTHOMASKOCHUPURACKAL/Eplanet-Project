@@ -2,6 +2,7 @@
 <?php
 session_start();
 include('include/config.php');
+
 if(strlen($_SESSION['alogin'])==0)
 	{	
 header('location:index.php');
@@ -88,16 +89,23 @@ while($row=mysqli_fetch_array($query))
 										<?php $cnt=$cnt+1; } ?>
 										
 								</table>
+								
 							</div>
 						</div>						
+<form action="viewpdf.php">
+						<div class="controls">
+												<button type="submit" name="submit" class="btn">Create pdf</button>
 
-						
-						
+
+
+											</div>
+						</form>
 					</div><!--/.content-->
 				</div><!--/.span9-->
 			</div>
 		</div><!--/.container-->
 	</div><!--/.wrapper-->
+
 
 <?php include('include/footer.php');?>
 
